@@ -51,21 +51,21 @@ export default function Gallery() {
   return (
     <section className="max-w-7xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Gallery</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {images.map((imgNum) => (
           <div
             key={imgNum}
-            className="cursor-pointer"
-            onClick={() => setModalImage(imgNum)}
+            className="cursor-pointer group relative overflow-hidden rounded-2xl"
           >
             <Image
               src={`/gallery/image${imgNum}.jpg`}
               alt={`Gallery Image ${imgNum}`}
               width={300}
               height={200}
-              className="rounded"
+              className="rounded-2xl transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
+            <div className="absolute inset-0 bg-forest-900/20 group-hover:bg-forest-900/0 transition-all duration-300" />
           </div>
         ))}
       </div>

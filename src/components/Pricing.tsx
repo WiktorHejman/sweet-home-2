@@ -8,7 +8,7 @@ const PricingSection = () => {
       {/* Season Cards */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {/* Low Season Card */}
-        <div className="bg-neutral-800/50 backdrop-blur-sm rounded-xl shadow-md p-8 border border-neutral-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-900/30 hover:border-neutral-600/50">
+        <div className="bg-earth-900/50 backdrop-blur-sm rounded-xl shadow-md p-8 border border-earth-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-earth-900/30 hover:border-earth-600/50">
           <h3 className="text-2xl font-semibold text-neutral-200 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
             Niski sezon
@@ -35,7 +35,7 @@ const PricingSection = () => {
         </div>
 
         {/* High Season Card */}
-        <div className="bg-neutral-800/50 backdrop-blur-sm rounded-xl shadow-md p-8 border border-neutral-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-neutral-900/30 hover:border-neutral-600/50">
+        <div className="bg-earth-900/50 backdrop-blur-sm rounded-xl shadow-md p-8 border border-earth-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-earth-900/30 hover:border-earth-600/50">
           <h3 className="text-2xl font-semibold text-neutral-200 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-500"></span>
             Wysoki sezon

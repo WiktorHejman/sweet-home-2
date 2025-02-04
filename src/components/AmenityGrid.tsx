@@ -59,17 +59,18 @@ const AmenityGrid = () => {
           ) : (
             <div
               key={index}
-              className="group p-6 rounded-3xl border border-neutral-800 hover:border-neutral-700 
-                         transition-all duration-300 hover:bg-neutral-900/50"
+              className="group p-6 rounded-3xl border border-forest-800/50 hover:border-forest-600/50 
+                         bg-forest-900/10 hover:bg-forest-800/20
+                         transition-all duration-300 backdrop-blur-sm"
             >
               <div className="space-y-4">
-                <div className="text-neutral-400 group-hover:text-neutral-200 transition-colors duration-300">
+                <div className="text-forest-400 group-hover:text-forest-300 transition-colors duration-300">
                   {amenity.icon}
                 </div>
-                <h3 className="text-xl font-medium text-neutral-200">
+                <h3 className="text-xl font-medium text-earth-100">
                   {amenity.title}
                 </h3>
-                <p className="text-neutral-400 leading-relaxed">
+                <p className="text-earth-300 leading-relaxed">
                   {amenity.description}
                 </p>
               </div>

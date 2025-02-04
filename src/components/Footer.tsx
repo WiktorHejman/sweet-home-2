@@ -4,8 +4,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-neutral-900/50 backdrop-blur-sm border-t border-neutral-800">
-      <div className="max-w-7xl mx-auto px-4 py-12">
+    <footer className="bg-forest-900/80 backdrop-blur-sm border-t border-forest-800/50">
+      <div className="max-w-7xl mx-auto px-4 py-12 bg-gradient-to-b from-transparent to-forest-900/30">
         <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:justify-between">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-neutral-200 mb-4">Kontakt</h3>

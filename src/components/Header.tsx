@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
-        ? 'bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-800/50 translate-y-0 opacity-100'
+        ? 'bg-earth-900/90 backdrop-blur-sm border-b border-earth-800/50 translate-y-0 opacity-100'
         : 'bg-transparent -translate-y-full opacity-0'
         }`}
     >
@@ -52,20 +52,20 @@ const Header = () => {
 
           <button className="
             relative overflow-hidden px-6 py-2 rounded-lg
-            bg-emerald-500/10 text-emerald-500
-            border border-emerald-500/20
-            hover:bg-emerald-500/20 hover:border-emerald-500/30
+            bg-forest-500/10 text-forest-300
+            border border-forest-500/20
+            hover:bg-forest-500/20 hover:border-forest-500/30
             transition-all duration-300
             group
           ">
             <span className="relative z-10">Rezerwacja</span>
             <span className="
-              absolute inset-0 -translate-y-full bg-emerald-500/10
+              absolute inset-0 -translate-y-full bg-forest-500/10
               group-hover:translate-y-0
               transition-transform duration-300
             "></span>
             <span className="
-              absolute inset-0 translate-y-full bg-emerald-500/10
+              absolute inset-0 translate-y-full bg-forest-500/10
               group-hover:translate-y-0
               transition-transform duration-300
             "></span>

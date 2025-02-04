@@ -3,19 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfbf8;
+  --foreground: #2c2c2c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1a18;
+    --foreground: #f5f3ef;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(26, 26, 24, 0.97),
+      rgba(26, 26, 24, 0.97)
+    ),
+    url("/texture.png");
+  background-repeat: repeat;
 }
