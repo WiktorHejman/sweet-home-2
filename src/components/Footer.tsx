@@ -1,32 +1,78 @@
 import Link from 'next/link';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-white py-6">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div>
-            <p>Contact us: info@houserental.com | +1 234 567 890</p>
+    <footer className="bg-neutral-900/50 backdrop-blur-sm border-t border-neutral-800">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:justify-between">
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-neutral-200 mb-4">Kontakt</h3>
+            <div className="space-y-2">
+              <a
+                href="mailto:lasownia@gmail.com"
+                className="flex items-center gap-2 text-neutral-300 hover:text-neutral-200 transition-colors duration-200"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span>lasownia@gmail.com</span>
+              </a>
+              <a
+                href="tel:+48781246140"
+                className="flex items-center gap-2 text-neutral-300 hover:text-neutral-200 transition-colors duration-200"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <span>+48 781 246 140</span>
+              </a>
+            </div>
           </div>
-          <div className="mt-4 md:mt-0 space-x-4">
-            <Link href="/terms-website" className="hover:underline">
-              Terms for Website
-            </Link>
-            <Link href="/terms-facilities" className="hover:underline">
-              Terms for Facilities
-            </Link>
-            <Link href="/private-policy" className="hover:underline">
-              Private Policy
-            </Link>
-            <button className="hover:underline">
-              Newsletter
-            </button>
+
+          <div className="space-y-4">
+            <div className="flex space-x-8">
+              <Link
+                href="/regulamin-strony"
+                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <span className="w-1 h-1 rounded-full bg-emerald-500 group-hover:w-2 transition-all duration-200"></span>
+                Regulamin strony
+              </Link>
+              <Link
+                href="/regulamin-obiektu"
+                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <span className="w-1 h-1 rounded-full bg-amber-500 group-hover:w-2 transition-all duration-200"></span>
+                Regulamin obiektu
+              </Link>
+              <Link
+                href="/polityka-prywatnosci"
+                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <span className="w-1 h-1 rounded-full bg-blue-500 group-hover:w-2 transition-all duration-200"></span>
+                Polityka prywatności
+              </Link>
+              <button
+                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <span className="w-1 h-1 rounded-full bg-purple-500 group-hover:w-2 transition-all duration-200"></span>
+                Newsletter
+              </button>
+            </div>
           </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-neutral-800">
+          <p className="text-center text-neutral-400 text-sm">
+            © {currentYear} Lasownia. Wszystkie prawa zastrzeżone.
+          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;
