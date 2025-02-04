@@ -23,6 +23,6 @@ body {
       rgba(26, 26, 24, 0.97),
       rgba(26, 26, 24, 0.97)
     ),
-    url("/texture.png");
+    url("/texture.svg");
   background-repeat: repeat;
 }

@@ -1,4 +1,5 @@
 'use client'
+
 import { MouseEvent, useEffect, useRef } from 'react';
 
 const Separator = () => {
