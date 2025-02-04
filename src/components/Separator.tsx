@@ -1,6 +1,5 @@
 'use client'
 import { MouseEvent, useEffect, useRef } from 'react';
-import styles from './style.module.css';
 
 const Separator = () => {
   const path = useRef<SVGPathElement>(null);
@@ -59,15 +58,22 @@ const Separator = () => {
   }
 
   return (
-    <div className={styles.line}>
+    <div className="h-px w-full relative">
       <div
-        className={styles.box}
+        className="h-10 w-full relative -top-5 z-10"
         onMouseEnter={manageMouseEnter}
         onMouseMove={manageMouseMove}
         onMouseLeave={manageMouseLeave}
       />
-      <svg preserveAspectRatio="none" viewBox={`0 -50 ${window.innerWidth} 100`}>
-        <path ref={path} />
+      <svg
+        className="w-full h-[50px] absolute -top-[25px] left-0 right-0"
+        preserveAspectRatio="none"
+        viewBox={`0 -50 ${window.innerWidth} 100`}
+      >
+        <path
+          ref={path}
+          className="stroke-white stroke-[1px] fill-none [vector-effect:non-scaling-stroke]"
+        />
       </svg>
     </div>
   )
