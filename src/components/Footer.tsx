@@ -38,27 +38,27 @@ const Footer = () => {
                 href="/regulamin-strony"
                 className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
               >
-                <span className="w-1 h-1 rounded-full bg-emerald-500 group-hover:w-2 transition-all duration-200"></span>
+                <span className="w-1 h-1 rounded-full bg-forest-400 group-hover:w-2 transition-all duration-200"></span>
                 Regulamin strony
               </Link>
               <Link
                 href="/regulamin-obiektu"
                 className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
               >
-                <span className="w-1 h-1 rounded-full bg-amber-500 group-hover:w-2 transition-all duration-200"></span>
+                <span className="w-1 h-1 rounded-full bg-earth-400 group-hover:w-2 transition-all duration-200"></span>
                 Regulamin obiektu
               </Link>
               <Link
                 href="/polityka-prywatnosci"
                 className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
               >
-                <span className="w-1 h-1 rounded-full bg-blue-500 group-hover:w-2 transition-all duration-200"></span>
+                <span className="w-1 h-1 rounded-full bg-forest-500 group-hover:w-2 transition-all duration-200"></span>
                 Polityka prywatności
               </Link>
               <button
                 className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
               >
-                <span className="w-1 h-1 rounded-full bg-purple-500 group-hover:w-2 transition-all duration-200"></span>
+                <span className="w-1 h-1 rounded-full bg-earth-500 group-hover:w-2 transition-all duration-200"></span>
                 Newsletter
               </button>
             </div>

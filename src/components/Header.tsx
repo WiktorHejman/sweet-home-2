@@ -34,10 +34,10 @@ const Header = () => {
 
         <nav className="flex items-center gap-8">
           {[
-            { href: '/#about', label: 'O nas', dotColor: 'bg-emerald-500' },
-            { href: '/domki', label: 'Domki', dotColor: 'bg-amber-500' },
-            { href: '/galeria', label: 'Galeria', dotColor: 'bg-blue-500' },
-            { href: '/#pricing', label: 'Cennik', dotColor: 'bg-purple-500' },
+            { href: '/#about', label: 'O nas', dotColor: 'bg-forest-400' },
+            { href: '/domki', label: 'Domki', dotColor: 'bg-earth-400' },
+            { href: '/galeria', label: 'Galeria', dotColor: 'bg-forest-500' },
+            { href: '/#pricing', label: 'Cennik', dotColor: 'bg-earth-500' },
           ].map((link) => (
             <Link
               key={link.href}

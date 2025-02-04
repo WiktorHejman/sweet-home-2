@@ -10,7 +10,7 @@ const PricingSection = () => {
         {/* Low Season Card */}
         <div className="bg-earth-900/50 backdrop-blur-sm rounded-xl shadow-md p-8 border border-earth-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-earth-900/30 hover:border-earth-600/50">
           <h3 className="text-2xl font-semibold text-neutral-200 mb-2 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span className="w-2 h-2 rounded-full bg-forest-400"></span>
             Niski sezon
           </h3>
           <p className="text-neutral-400 text-sm mb-6">
@@ -37,7 +37,7 @@ const PricingSection = () => {
         {/* High Season Card */}
         <div className="bg-earth-900/50 backdrop-blur-sm rounded-xl shadow-md p-8 border border-earth-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-earth-900/30 hover:border-earth-600/50">
           <h3 className="text-2xl font-semibold text-neutral-200 mb-2 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+            <span className="w-2 h-2 rounded-full bg-earth-400"></span>
             Wysoki sezon
           </h3>
           <p className="text-neutral-400 text-sm mb-6">
@@ -65,7 +65,7 @@ const PricingSection = () => {
       {/* Additional Fees */}
       <div className="mb-12">
         <h3 className="text-2xl font-semibold text-neutral-200 mb-6 flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+          <span className="w-2 h-2 rounded-full bg-forest-500"></span>
           Dodatkowe opłaty
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
@@ -91,7 +91,7 @@ const PricingSection = () => {
       {/* Included Amenities */}
       <div className="mb-8">
         <h3 className="text-2xl font-semibold text-neutral-200 mb-6 flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+          <span className="w-2 h-2 rounded-full bg-earth-500"></span>
           W cenie pobytu
         </h3>
         <div className="grid sm:grid-cols-2 gap-4">
