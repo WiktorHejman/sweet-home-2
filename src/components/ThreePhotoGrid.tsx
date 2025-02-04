@@ -17,7 +17,7 @@ interface ThreePhotoGridProps {
 
 const ThreePhotoGrid = ({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreePhotoGridProps) => {
   return (
-    <div className="max-w-7xl mx-auto space-y-4">
+    <div className="space-y-4">
       <div className="relative w-full aspect-[16/9]">
         <Image
           src={mainPhoto.src}
