@@ -5,7 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-forest-900/80 backdrop-blur-sm border-t border-forest-800/50">
-      <div className="max-w-7xl mx-auto px-4 py-12 bg-gradient-to-b from-transparent to-forest-900/30">
+      <div className="max-w-7xl mx-auto px-4 py-12 bg-gradient-to-b">
         <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row md:justify-between">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-neutral-200 mb-4">Kontakt</h3>
@@ -33,32 +33,36 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <div className="flex space-x-8">
+            <div className="flex flex-wrap gap-6">
               <Link
                 href="/regulamin-strony"
-                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                         transition-all duration-100 rounded-lg
+                         hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
-                <span className="w-1 h-1 rounded-full bg-forest-400 group-hover:w-2 transition-all duration-200"></span>
                 Regulamin strony
               </Link>
               <Link
                 href="/regulamin-obiektu"
-                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                         transition-all duration-100 rounded-lg
+                         hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
-                <span className="w-1 h-1 rounded-full bg-earth-400 group-hover:w-2 transition-all duration-200"></span>
                 Regulamin obiektu
               </Link>
               <Link
                 href="/polityka-prywatnosci"
-                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                         transition-all duration-100 rounded-lg
+                         hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
-                <span className="w-1 h-1 rounded-full bg-forest-500 group-hover:w-2 transition-all duration-200"></span>
                 Polityka prywatności
               </Link>
               <button
-                className="text-neutral-300 hover:text-neutral-200 transition-colors duration-200 flex items-center gap-2 group"
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                         transition-all duration-100 rounded-lg
+                         hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
-                <span className="w-1 h-1 rounded-full bg-earth-500 group-hover:w-2 transition-all duration-200"></span>
                 Newsletter
               </button>
             </div>

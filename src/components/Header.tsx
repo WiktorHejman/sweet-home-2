@@ -34,19 +34,19 @@ const Header = () => {
 
         <nav className="flex items-center gap-8">
           {[
-            { href: '/#about', label: 'O nas', dotColor: 'bg-forest-400' },
-            { href: '/domki', label: 'Domki', dotColor: 'bg-earth-400' },
-            { href: '/galeria', label: 'Galeria', dotColor: 'bg-forest-500' },
-            { href: '/#pricing', label: 'Cennik', dotColor: 'bg-earth-500' },
+            { href: '/#about', label: 'O nas' },
+            { href: '/domki', label: 'Domki' },
+            { href: '/galeria', label: 'Galeria' },
+            { href: '/#pricing', label: 'Cennik' },
           ].map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="relative group flex items-center gap-2 text-neutral-300 hover:text-neutral-200 transition-colors duration-200"
+              className="relative text-lg px-3 py-1 font-medium text-neutral-300 hover:text-earth-100
+                         transition-all duration-100 rounded-lg
+                         hover:bg-forest-900/30 hover:backdrop-blur-sm"
             >
-              <span className={`w-1 h-1 rounded-full ${link.dotColor} group-hover:w-2 transition-all duration-200`}></span>
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neutral-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
 
@@ -56,7 +56,7 @@ const Header = () => {
             border border-forest-500/20
             hover:bg-forest-500/20 hover:border-forest-500/30
             transition-all duration-300
-            group
+            group text-lg font-semibold
           ">
             <span className="relative z-10">Rezerwacja</span>
             <span className="
