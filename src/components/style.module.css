@@ -1,0 +1,29 @@
+.line {
+  height: 1px;
+  width: 100%;
+  position: relative;
+}
+
+.line svg {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  right: 0;
+}
+
+.line svg path {
+  stroke: white;
+  stroke-width: 1px;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.line .box {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  top: -20px;
+  z-index: 1;
+}
