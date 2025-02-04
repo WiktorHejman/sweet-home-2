@@ -44,30 +44,30 @@ const AmenityGrid = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto py-16 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {amenities.map((amenity, index) => (
-          amenity.isDecorative ? (
-            <div
-              key={index}
-              className="p-6 rounded-3xl border border-neutral-800 bg-neutral-900/50 hidden lg:block"
-            >
-              <div className="h-full w-full flex items-center justify-center">
-                <div className="w-12 h-0.5 bg-neutral-700 rotate-45"></div>
-              </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {amenities.map((amenity, index) => (
+        amenity.isDecorative ? (
+          <div
+            key={index}
+            className="p-8 rounded-3xl border border-forest-800/50 bg-forest-900/20 hidden lg:block"
+          >
+            <div className="h-full w-full flex items-center justify-center">
+              <div className="w-16 h-0.5 bg-forest-700/50 rotate-45"></div>
             </div>
-          ) : (
-            <div
-              key={index}
-              className="group p-6 rounded-3xl border border-forest-800/50 hover:border-forest-600/50 
+          </div>
+        ) : (
+          <div
+            key={index}
+            className="group p-8 rounded-3xl border border-forest-800/50 hover:border-forest-600/50 
                          bg-forest-900/10 hover:bg-forest-800/20
                          transition-all duration-300 backdrop-blur-sm"
-            >
-              <div className="space-y-4">
-                <div className="text-forest-400 group-hover:text-forest-300 transition-colors duration-300">
-                  {amenity.icon}
-                </div>
-                <h3 className="text-xl font-medium text-earth-100">
+          >
+            <div className="flex gap-6">
+              <div className="text-forest-400 group-hover:text-forest-300 transition-colors duration-300 shrink-0">
+                {amenity.icon}
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-xl font-medium text-earth-100 font-lora">
                   {amenity.title}
                 </h3>
                 <p className="text-earth-300 leading-relaxed">
@@ -75,10 +75,10 @@ const AmenityGrid = () => {
                 </p>
               </div>
             </div>
-          )
-        ))}
-      </div>
-    </section>
+          </div>
+        )
+      ))}
+    </div>
   );
 };
 

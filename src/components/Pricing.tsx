@@ -1,6 +1,6 @@
 const PricingSection = () => {
   return (
-    <section className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <>
       <h2 className="text-4xl font-bold text-center text-neutral-200 mb-12">
         Cennik
       </h2>
@@ -113,7 +113,7 @@ const PricingSection = () => {
       <p className="text-center text-neutral-400 italic">
         * W święta i długie weekendy mogą obowiązywać inne ceny.
       </p>
-    </section>
+    </>
   );
 };
 

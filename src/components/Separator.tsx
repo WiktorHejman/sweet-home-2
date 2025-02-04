@@ -15,7 +15,6 @@ const Separator = () => {
 
   const setPath = (progress: number) => {
     const width = window.innerWidth;
-    // Using absolute coordinates and preserveAspectRatio
     path.current?.setAttributeNS(null, "d", `M0 0 Q${width * x} ${progress}, ${width} 0`)
   }
 
@@ -73,7 +72,7 @@ const Separator = () => {
       >
         <path
           ref={path}
-          className="stroke-white stroke-[1px] fill-none [vector-effect:non-scaling-stroke]"
+          className="stroke-forest-500/30 stroke-[2px] fill-none [vector-effect:non-scaling-stroke]"
         />
       </svg>
     </div>

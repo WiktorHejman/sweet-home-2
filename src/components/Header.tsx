@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -27,9 +28,9 @@ const Header = () => {
             href="/"
             className="font-bold text-2xl text-neutral-200 transition-colors duration-200 hover:text-white"
           >
-            Lasownia
+            <Image src="/logo_lasownia_pic_white.png" alt="Lasownia" width={36} height={36} />
           </Link>
-          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-300 group-hover:w-full"></span>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-forest-400 transition-all duration-300 group-hover:w-full"></span>
         </div>
 
         <nav className="flex items-center gap-8">
