@@ -1,24 +1,21 @@
-import React from 'react';
+import { FC, ReactNode } from "react";
 
 interface ModalProps {
   onClose: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
+const Modal: FC<ModalProps> = ({ onClose, children }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-forest-950/90 backdrop-blur-sm" />
       <div
-        className="absolute inset-0 bg-black opacity-50"
-        onClick={onClose}
-      ></div>
-      <div className="bg-white p-4 rounded shadow-lg z-10 relative">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-gray-700 text-2xl"
-        >
-          &times;
-        </button>
+        className="relative z-10 inline-block"
+        onClick={e => e.stopPropagation()}
+      >
         {children}
       </div>
     </div>

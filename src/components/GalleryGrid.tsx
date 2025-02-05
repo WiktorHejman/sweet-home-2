@@ -9,10 +9,15 @@ import Modal from './Modal';
 export default function GalleryGrid({ initialImages }: { initialImages: GalleryImage[] }) {
   const [images, setImages] = useState<GalleryImage[]>(initialImages);
   const [modalImage, setModalImage] = useState<GalleryImage | null>(null);
+  const [isModalImageLoading, setIsModalImageLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const loadMoreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsModalImageLoading(true);
+  }, [modalImage]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,43 +50,68 @@ export default function GalleryGrid({ initialImages }: { initialImages: GalleryI
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
         {images.map((image) => (
           <div
             key={image.id}
-            className="cursor-pointer group relative overflow-hidden rounded-2xl"
+            className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-2xl"
             onClick={() => setModalImage(image)}
           >
-            <Image
-              src={image.url}
-              alt={`${image.folder} gallery image`}
-              width={300}
-              height={200}
-              className="rounded-2xl transition-transform duration-500 group-hover:scale-105 object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-forest-900/20 group-hover:bg-forest-900/0 transition-all duration-300" />
+            <div className="relative aspect-auto">
+              <Image
+                src={image.url}
+                alt={`${image.folder} gallery image`}
+                width={800}
+                height={800}
+                className="w-full h-auto rounded-2xl transition-all duration-500
+                         group-hover:scale-105 object-cover"
+                sizes="(max-width: 640px) 100vw,
+                       (max-width: 768px) 50vw,
+                       (max-width: 1024px) 33vw,
+                       25vw"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-forest-950/0 to-forest-950/30
+                            group-hover:opacity-0 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-forest-950/30 opacity-0
+                            group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
           </div>
         ))}
       </div>
 
-      <div ref={loadMoreRef} className="h-10 mt-6">
+      <div ref={loadMoreRef} className="h-20 mt-6">
         {loading && (
-          <div className="flex justify-center">
-            <div className="w-6 h-6 border-2 border-forest-500 border-t-transparent rounded-full animate-spin" />
+          <div className="flex justify-center items-center h-full">
+            <div className="w-8 h-8 border-3 border-forest-500 border-t-transparent
+                          rounded-full animate-spin" />
           </div>
         )}
       </div>
 
       {modalImage && (
         <Modal onClose={() => setModalImage(null)}>
-          <Image
-            src={modalImage.url}
-            alt={`${modalImage.folder} gallery image`}
-            width={800}
-            height={600}
-            className="rounded object-contain"
-          />
+          <div className="relative max-w-5xl mx-auto">
+            {isModalImageLoading && (
+              <div className="absolute inset-0 z-20 flex items-center justify-center bg-forest-950/50 rounded-2xl">
+                <div className="w-12 h-12 border-4 border-forest-300 border-t-transparent
+                            rounded-full animate-spin"
+                />
+              </div>
+            )}
+            <div className="relative" style={{ maxHeight: '85vh' }}>
+              <Image
+                src={modalImage.url}
+                alt={`${modalImage.folder} gallery image`}
+                width={1200}
+                height={800}
+                className={`rounded-2xl max-h-[85vh] w-auto h-auto transition-opacity duration-300
+                       ${isModalImageLoading ? 'opacity-0' : 'opacity-100'}`}
+                sizes="90vw"
+                onLoad={() => setIsModalImageLoading(false)}
+              />
+            </div>
+          </div>
         </Modal>
       )}
     </>
