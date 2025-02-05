@@ -47,7 +47,7 @@ const Header = () => {
             href="/"
             className="font-bold text-2xl text-neutral-200 transition-colors duration-200 hover:text-white"
           >
-            <Image src="/logo_lasownia_pic_white.png" alt="Lasownia" width={36} height={36} />
+            <Image src="/logo_lasownia_pic_white.png" alt="Lasownia" width={36} height={36} className="w-10 h-10" />
           </Link>
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-forest-400 transition-all duration-300 group-hover:w-full"></span>
         </div>

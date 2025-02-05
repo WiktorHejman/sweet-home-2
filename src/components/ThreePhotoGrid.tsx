@@ -23,6 +23,7 @@ const ThreePhotoGrid = ({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreeP
           src={mainPhoto.src}
           alt={mainPhoto.alt}
           fill
+          sizes="(max-width: 1280px) 100vw, 1280px"
           className="object-cover rounded-3xl"
         />
       </div>
@@ -33,6 +34,7 @@ const ThreePhotoGrid = ({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreeP
             src={bottomLeftPhoto.src}
             alt={bottomLeftPhoto.alt}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover rounded-3xl"
           />
         </div>
@@ -42,6 +44,7 @@ const ThreePhotoGrid = ({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreeP
             src={bottomRightPhoto.src}
             alt={bottomRightPhoto.alt}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover rounded-3xl"
           />
         </div>
