@@ -1,29 +1,51 @@
 'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
   const SCROLL_OFFSET = 80;
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('/#')) {
+    if (href.startsWith('#') || href.startsWith('/#')) {
       e.preventDefault();
-      const targetId = href.replace('/#', '');
-      const element = document.getElementById(targetId);
+      const targetId = href.replace('/#', '').replace('#', '');
 
+      if (pathname !== '/') {
+        router.push(`/#${targetId}`);
+      } else {
+        const element = document.getElementById(targetId);
+        if (element) {
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - SCROLL_OFFSET;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (pathname === '/' && window.location.hash) {
+      const targetId = window.location.hash.slice(1);
+      const element = document.getElementById(targetId);
       if (element) {
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - SCROLL_OFFSET;
-
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
         });
       }
     }
-  };
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,18 +76,18 @@ const Header = () => {
 
         <nav className="flex items-center gap-8">
           {[
-            { href: '/#o-nas', label: 'O nas' },
+            { href: pathname === '/' ? '#o-nas' : '/#o-nas', label: 'O nas' },
             { href: '/domki', label: 'Domki' },
             { href: '/galeria', label: 'Galeria' },
-            { href: '/#cennik', label: 'Cennik' },
+            { href: pathname === '/' ? '#cennik' : '/#cennik', label: 'Cennik' },
           ].map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="relative text-lg px-3 py-1 font-medium text-neutral-300 hover:text-earth-100
-                         transition-all duration-100 rounded-lg
-                         hover:bg-forest-900/30 hover:backdrop-blur-sm"
               onClick={(e) => handleNavClick(e, link.href)}
+              className="relative text-lg px-3 py-1 font-medium text-neutral-300 hover:text-earth-100
+                       transition-all duration-100 rounded-lg
+                       hover:bg-forest-900/30 hover:backdrop-blur-sm"
             >
               {link.label}
             </Link>
