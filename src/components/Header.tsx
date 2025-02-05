@@ -5,6 +5,25 @@ import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const SCROLL_OFFSET = 80;
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.replace('/#', '');
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - SCROLL_OFFSET;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,10 +54,10 @@ const Header = () => {
 
         <nav className="flex items-center gap-8">
           {[
-            { href: '/#about', label: 'O nas' },
+            { href: '/#o-nas', label: 'O nas' },
             { href: '/domki', label: 'Domki' },
             { href: '/galeria', label: 'Galeria' },
-            { href: '/#pricing', label: 'Cennik' },
+            { href: '/#cennik', label: 'Cennik' },
           ].map((link) => (
             <Link
               key={link.href}
@@ -46,6 +65,7 @@ const Header = () => {
               className="relative text-lg px-3 py-1 font-medium text-neutral-300 hover:text-earth-100
                          transition-all duration-100 rounded-lg
                          hover:bg-forest-900/30 hover:backdrop-blur-sm"
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
             </Link>

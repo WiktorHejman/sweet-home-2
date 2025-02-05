@@ -13,7 +13,9 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <AboutUs />
+        <section id="o-nas">
+          <AboutUs />
+        </section>
 
         <ThreePhotoGrid
           mainPhoto={{
@@ -64,7 +66,7 @@ export default function Home() {
           <AmenityGrid />
         </section>
 
-        <section className="mb-20">
+        <section id="cennik" className="mb-20">
           <Pricing />
         </section>
       </div>
