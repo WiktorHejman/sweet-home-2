@@ -2,7 +2,7 @@
 
 import { House } from '@/types/houses';
 import { useHouseSelector } from '@/utils/hooks';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 interface HouseSelectorProps {
   houses: Record<string, {
