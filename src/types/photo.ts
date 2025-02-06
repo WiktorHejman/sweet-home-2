@@ -3,7 +3,7 @@ import { House } from "./houses";
 export type Photos = {
   hero: string;
   verticals: string[];
-  // horizontals: string[];
+  horizontals?: string[];
   horizontalFirst: string;
   horizontalSecond: string;
 };

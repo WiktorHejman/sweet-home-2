@@ -1,15 +1,18 @@
 import AboutUs from "@/components/AboutUs";
 import AmenityGrid from "@/components/AmenityGrid";
+import HeroBanner from "@/components/HeroBanner";
 import PhotoWithDescription from "@/components/PhotoWithDescription";
 import Pricing from "@/components/Pricing";
 import Separator from "@/components/Separator";
-import { TextParallaxContentExample } from "@/components/TextParallaxContent";
 import ThreePhotoGrid from "@/components/ThreePhotoGrid";
-
 export default function Home() {
   return (
     <>
-      <TextParallaxContentExample />
+      <HeroBanner
+        imgUrl="/main-1.jpg"
+        heading="Lasownia"
+        subheading="Oaza spokoju blisko natury"
+      />
 
       <div className="max-w-7xl mx-auto px-6">
 

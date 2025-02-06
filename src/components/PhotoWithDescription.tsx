@@ -7,7 +7,7 @@ interface PhotoWithDescriptionProps {
   orientation: 'left' | 'right';
 }
 
-const PhotoWithDescription = ({ src, alt, description, orientation }: PhotoWithDescriptionProps) => {
+export default function PhotoWithDescription({ src, alt, description, orientation }: PhotoWithDescriptionProps) {
   return (
     <div className="max-w-7xl mx-auto space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -33,5 +33,3 @@ const PhotoWithDescription = ({ src, alt, description, orientation }: PhotoWithD
     </div>
   )
 }
-
-export default PhotoWithDescription

@@ -3,25 +3,10 @@
 import { getHousePhotos } from '@/app/actions/houses.actions';
 import { House } from '@/types/houses';
 import { Photos } from '@/types/photo';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { HouseSelectorContext } from '@/utils/hooks';
+import { ReactNode, useEffect, useState } from 'react';
 
-interface HouseSelectorContextType {
-  selectedHouse: House;
-  setSelectedHouse: (house: House) => void;
-  photos: Photos | null;
-}
-
-const HouseSelectorContext = createContext<HouseSelectorContextType | null>(null);
-
-export const useHouseSelector = () => {
-  const context = useContext(HouseSelectorContext);
-  if (!context) {
-    throw new Error('useHouseSelector must be used within HouseSelectorProvider');
-  }
-  return context;
-};
-
-export const HouseSelectorProvider = ({ children }: { children: React.ReactNode }) => {
+export default function HouseSelectorProvider({ children }: { children: ReactNode }) {
   const [selectedHouse, setSelectedHouse] = useState<House>('dzieciol');
   const [photos, setPhotos] = useState<Photos | null>(null);
 

@@ -2,16 +2,12 @@
 
 import { MouseEvent, useEffect, useRef } from 'react';
 
-const Separator = () => {
+export default function Separator() {
   const path = useRef<SVGPathElement>(null);
   let progress = 0;
   let x = 0.5;
   let time = Math.PI / 2;
   let reqId: number | null = null;
-
-  useEffect(() => {
-    setPath(progress);
-  }, [])
 
   const setPath = (progress: number) => {
     const width = window.innerWidth;
@@ -57,6 +53,10 @@ const Separator = () => {
     progress = 0;
   }
 
+  useEffect(() => {
+    setPath(progress);
+  }, [])
+
   return (
     <div className="h-px w-full relative">
       <div
@@ -78,5 +78,3 @@ const Separator = () => {
     </div>
   )
 };
-
-export default Separator;

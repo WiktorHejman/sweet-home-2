@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const Header = () => {
+export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -89,10 +89,10 @@ const Header = () => {
             <Link
               key={link.href}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
               className="relative text-lg px-3 py-1 font-medium text-neutral-300 hover:text-earth-100
-                       transition-all duration-100 rounded-lg
-                       hover:bg-forest-900/30 hover:backdrop-blur-sm"
+              transition-all duration-100 rounded-lg
+              hover:bg-forest-900/30 hover:backdrop-blur-sm"
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
             </Link>
@@ -121,8 +121,8 @@ const Header = () => {
         </nav>
 
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden p-2 text-neutral-200 hover:text-white z-50"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="sr-only">Menu</span>
           <div className="w-6 h-6 flex flex-col justify-center gap-1.5">
@@ -140,8 +140,8 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed left-0 top-0 w-full h-screen md:hidden bg-earth-900/95 backdrop-blur-md"
             style={{ top: 0 }}
+            className="fixed left-0 top-0 w-full h-screen md:hidden bg-earth-900/95 backdrop-blur-md"
           >
             <div className="h-full flex flex-col justify-between px-6 py-24">
               <div className="flex flex-col items-center gap-8">
@@ -156,11 +156,11 @@ const Header = () => {
                   >
                     <Link
                       href={link.href}
+                      className="w-full text-center block py-4 text-3xl font-medium
+                      text-neutral-300 hover:text-earth-100
+                      transition-colors duration-300
+                      border-b border-forest-800/30"
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className="w-full text-center block py-4 text-3xl font-medium 
-                               text-neutral-300 hover:text-earth-100
-                               transition-colors duration-300
-                               border-b border-forest-800/30"
                     >
                       {link.label}
                     </Link>
@@ -195,5 +195,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

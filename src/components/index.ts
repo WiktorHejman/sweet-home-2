@@ -1,0 +1,10 @@
+export { default as AboutUs } from "./AboutUs";
+export { default as AmenityGrid } from "./AmenityGrid";
+export { default as Footer } from "./Footer";
+export { default as GalleryGrid } from "./GalleryGrid";
+export { default as Header } from "./Header";
+export { default as Modal } from "./Modal";
+export { default as PhotoWithDescription } from "./PhotoWithDescription";
+export { default as Pricing } from "./Pricing";
+export { default as Separator } from "./Separator";
+export { default as ThreePhotoGrid } from "./ThreePhotoGrid";

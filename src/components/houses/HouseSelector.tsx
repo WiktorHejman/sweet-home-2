@@ -1,8 +1,8 @@
 'use client'
 
 import { House } from '@/types/houses';
+import { useHouseSelector } from '@/utils/hooks';
 import { motion } from 'framer-motion';
-import { useHouseSelector } from './HouseSelectorProvider';
 
 interface HouseSelectorProps {
   houses: Record<string, {
@@ -12,7 +12,7 @@ interface HouseSelectorProps {
   }>;
 }
 
-export const HouseSelector = ({ houses }: HouseSelectorProps) => {
+export default function HouseSelector({ houses }: HouseSelectorProps) {
   const { selectedHouse, setSelectedHouse } = useHouseSelector();
   const house = houses[selectedHouse];
 
@@ -22,11 +22,11 @@ export const HouseSelector = ({ houses }: HouseSelectorProps) => {
         {Object.entries(houses).map(([key, house]) => (
           <button
             key={key}
-            onClick={() => setSelectedHouse(key as House)}
             className={`flex-1 p-6 sm:p-8 rounded-3xl border transition-all duration-300
-                     ${selectedHouse === key
+              ${selectedHouse === key
                 ? 'border-forest-500/50 bg-forest-900/30'
                 : 'border-forest-800/30 bg-forest-900/10 hover:bg-forest-900/20'}`}
+            onClick={() => setSelectedHouse(key as House)}
           >
             <h2 className="text-xl sm:text-2xl font-bold text-earth-50 mb-2">{house.title}</h2>
             <p className="text-sm sm:text-base text-earth-300">{house.description}</p>
@@ -45,7 +45,7 @@ export const HouseSelector = ({ houses }: HouseSelectorProps) => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-earth-50
                        tracking-tight leading-tight">{house.title}</h1>
           <p className="text-lg sm:text-xl text-earth-300/80
-                     max-w-3xl leading-relaxed">{house.longDescription}</p>
+                      leading-relaxed">{house.longDescription}</p>
         </div>
       </motion.div>
     </>

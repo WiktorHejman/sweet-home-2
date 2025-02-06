@@ -1,13 +1,19 @@
-const PricingSection = () => {
+const additionalFees = [
+  { label: 'Osoba dorosła', price: '150 zł', unit: '/doba' },
+  { label: 'Sprzątanie', price: '150 zł', unit: 'jednorazowo' },
+  { label: 'Dzieci 2-12 lat', price: '75 zł', unit: '/doba' },
+  { label: 'Kaucja zwrotna', price: '500 zł', unit: 'za pobyt' },
+  { label: 'Dzieci do lat 2', price: 'bezpłatnie', unit: '' },
+];
+
+export default function PricingSection() {
   return (
     <>
       <h2 className="text-3xl sm:text-4xl font-bold text-center text-neutral-200 mb-8 sm:mb-12">
         Cennik
       </h2>
 
-      {/* Season Cards */}
       <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
-        {/* Low Season Card */}
         <div className="bg-earth-900/50 backdrop-blur-sm rounded-xl shadow-md p-6 sm:p-8 border border-earth-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-earth-900/30 hover:border-earth-600/50">
           <h3 className="text-xl sm:text-2xl font-semibold text-neutral-200 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-forest-400"></span>
@@ -34,7 +40,6 @@ const PricingSection = () => {
           </div>
         </div>
 
-        {/* High Season Card */}
         <div className="bg-earth-900/50 backdrop-blur-sm rounded-xl shadow-md p-6 sm:p-8 border border-earth-700/50 transition-all duration-300 hover:shadow-xl hover:shadow-earth-900/30 hover:border-earth-600/50">
           <h3 className="text-xl sm:text-2xl font-semibold text-neutral-200 mb-2 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-earth-400"></span>
@@ -62,20 +67,13 @@ const PricingSection = () => {
         </div>
       </div>
 
-      {/* Additional Fees */}
       <div className="mb-12">
         <h3 className="text-2xl font-semibold text-neutral-200 mb-6 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-forest-500"></span>
           Dodatkowe opłaty
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
-          {[
-            { label: 'Osoba dorosła', price: '150 zł', unit: '/doba' },
-            { label: 'Sprzątanie', price: '150 zł', unit: 'jednorazowo' },
-            { label: 'Dzieci 2-12 lat', price: '75 zł', unit: '/doba' },
-            { label: 'Kaucja zwrotna', price: '500 zł', unit: 'za pobyt' },
-            { label: 'Dzieci do lat 2', price: 'bezpłatnie', unit: '' },
-          ].map((item, index) => (
+          {additionalFees.map((item, index) => (
             <div key={index}
               className="group bg-neutral-900/50 backdrop-blur-sm rounded-lg p-4 border border-transparent transition-all duration-200 hover:bg-neutral-800/50 hover:border-neutral-700/50">
               <div className="grid grid-cols-[1fr_auto_auto] items-center gap-4">
@@ -88,7 +86,6 @@ const PricingSection = () => {
         </div>
       </div>
 
-      {/* Included Amenities */}
       <div className="mb-8">
         <h3 className="text-2xl font-semibold text-neutral-200 mb-6 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-earth-500"></span>
@@ -116,5 +113,3 @@ const PricingSection = () => {
     </>
   );
 };
-
-export default PricingSection;

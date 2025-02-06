@@ -26,7 +26,7 @@ const RuleSection = ({
   </div>
 );
 
-export const HouseRules = () => {
+export default function HouseRules() {
   return (
     <div className="space-y-10">
       <h2 className="text-4xl font-bold text-earth-50">Ogólne zasady</h2>

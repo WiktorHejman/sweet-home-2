@@ -1,11 +1,11 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface ModalProps {
   onClose: () => void;
   children: ReactNode;
 }
 
-const Modal: FC<ModalProps> = ({ onClose, children }) => {
+export default function Modal({ onClose, children }: ModalProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8"
@@ -21,5 +21,3 @@ const Modal: FC<ModalProps> = ({ onClose, children }) => {
     </div>
   );
 };
-
-export default Modal;

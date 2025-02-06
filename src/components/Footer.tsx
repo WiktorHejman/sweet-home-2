@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Footer = () => {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="flex flex-wrap gap-6">
               <Link
                 href="/regulamin-strony"
-                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100
                          transition-all duration-100 rounded-lg
                          hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
@@ -44,7 +44,7 @@ const Footer = () => {
               </Link>
               <Link
                 href="/regulamin-obiektu"
-                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100
                          transition-all duration-100 rounded-lg
                          hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
@@ -52,14 +52,14 @@ const Footer = () => {
               </Link>
               <Link
                 href="/polityka-prywatnosci"
-                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100
                          transition-all duration-100 rounded-lg
                          hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
                 Polityka prywatności
               </Link>
               <button
-                className="px-3 py-1 text-neutral-300 hover:text-earth-100 
+                className="px-3 py-1 text-neutral-300 hover:text-earth-100
                          transition-all duration-100 rounded-lg
                          hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
@@ -78,5 +78,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

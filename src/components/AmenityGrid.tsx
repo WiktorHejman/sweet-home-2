@@ -1,48 +1,48 @@
 import { DogIcon, MoneyIcon, PeopleIcon, SaunaIcon, TimeIcon } from "@/svg";
 
-const AmenityGrid = () => {
-  const amenities = [
-    {
-      icon: <SaunaIcon className="w-12 h-12 text-current" />,
-      title: "Prywatna strefa relaksu",
-      description: "Sauna i balia na wyłączność w każdym domu"
-    },
-    {
-      icon: <PeopleIcon className="w-12 h-12 text-current" />,
-      title: "Komfortowa przestrzeń",
-      description: "Do 6 osób (8 po uzgodnieniu)"
-    },
-    {
-      icon: <MoneyIcon className="w-12 h-12 text-current" />,
-      title: "Przyjazne dzieciom",
-      description: (
-        <>
-          Dzieci do lat 2 bezpłatnie<br />
-          Dzieci 2-12 lat 50% rabatu
-        </>
-      )
-    },
-    {
-      icon: <TimeIcon className="w-12 h-12 text-current" />,
-      title: "Elastyczny czas pobytu",
-      description: (
-        <>
-          Minimalny czas najmu:<br />
-          1 doba w tygodniu<br />
-          2 doby w weekend
-        </>
-      )
-    },
-    {
-      isDecorative: true
-    },
-    {
-      icon: <DogIcon className="w-12 h-12 text-current" />,
-      title: "Przyjazne zwierzętom",
-      description: "Darmowy pobyt dla czworonogów"
-    }
-  ];
+const amenities = [
+  {
+    icon: <SaunaIcon className="w-12 h-12 text-current" />,
+    title: "Prywatna strefa relaksu",
+    description: "Sauna i balia na wyłączność w każdym domu"
+  },
+  {
+    icon: <PeopleIcon className="w-12 h-12 text-current" />,
+    title: "Komfortowa przestrzeń",
+    description: "Do 6 osób (8 po uzgodnieniu)"
+  },
+  {
+    icon: <MoneyIcon className="w-12 h-12 text-current" />,
+    title: "Przyjazne dzieciom",
+    description: (
+      <>
+        Dzieci do lat 2 bezpłatnie<br />
+        Dzieci 2-12 lat 50% rabatu
+      </>
+    )
+  },
+  {
+    icon: <TimeIcon className="w-12 h-12 text-current" />,
+    title: "Elastyczny czas pobytu",
+    description: (
+      <>
+        Minimalny czas najmu:<br />
+        1 doba w tygodniu<br />
+        2 doby w weekend
+      </>
+    )
+  },
+  {
+    isDecorative: true
+  },
+  {
+    icon: <DogIcon className="w-12 h-12 text-current" />,
+    title: "Przyjazne zwierzętom",
+    description: "Darmowy pobyt dla czworonogów"
+  }
+];
 
+export default function AmenityGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {amenities.map((amenity, index) => (
@@ -81,5 +81,3 @@ const AmenityGrid = () => {
     </div>
   );
 };
-
-export default AmenityGrid;

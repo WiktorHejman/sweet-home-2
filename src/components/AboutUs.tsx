@@ -1,4 +1,4 @@
-const AboutUs = () => {
+export default function AboutUs() {
   return (
     <div className="mx-auto grid grid-cols-1 gap-8 pb-24 pt-12 md:grid-cols-12">
       <h2 className="col-span-1 text-2xl sm:text-3xl font-bold md:col-span-4 border-2 border-forest-500/30 rounded-3xl p-6 bg-forest-900/20 backdrop-blur-sm">
@@ -20,5 +20,3 @@ const AboutUs = () => {
     </div>
   );
 };
-
-export default AboutUs;

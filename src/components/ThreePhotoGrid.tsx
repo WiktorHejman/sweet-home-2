@@ -15,7 +15,7 @@ interface ThreePhotoGridProps {
   };
 }
 
-const ThreePhotoGrid = ({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreePhotoGridProps) => {
+export default function ThreePhotoGrid({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreePhotoGridProps) {
   return (
     <div className="space-y-4">
       <div className="relative w-full aspect-[16/9]">
@@ -52,5 +52,3 @@ const ThreePhotoGrid = ({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreeP
     </div>
   );
 };
-
-export default ThreePhotoGrid;

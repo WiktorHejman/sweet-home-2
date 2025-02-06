@@ -1,13 +1,13 @@
 'use client';
 
+import { useHouseSelector } from "@/utils/hooks";
 import Image from "next/image";
-import { useHouseSelector } from "./HouseSelectorProvider";
 
 interface HorizontalPhotoProps {
   category: 'hero' | 'horizontalFirst' | 'horizontalSecond';
 }
 
-export const HorizontalPhoto = ({ category }: HorizontalPhotoProps) => {
+export default function HorizontalPhoto({ category }: HorizontalPhotoProps) {
   const { photos } = useHouseSelector();
 
   if (!photos?.[category]) return null;
