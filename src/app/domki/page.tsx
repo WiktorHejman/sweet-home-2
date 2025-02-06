@@ -31,8 +31,9 @@ export default function Houses() {
         <HouseFeatures />
         <TwoVerticalPhotos category="verticals" />
         <SleepingArrangements />
-        <HorizontalPhoto category="horizontal" />
+        <HorizontalPhoto category="horizontalFirst" />
         <Amenities />
+        <HorizontalPhoto category="horizontalSecond" />
         <HouseRules />
       </section>
     </HouseSelectorProvider>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useHouseSelector } from "./HouseSelectorProvider";
 
 interface HorizontalPhotoProps {
-  category: 'hero' | 'horizontal';
+  category: 'hero' | 'horizontalFirst' | 'horizontalSecond';
 }
 
 export const HorizontalPhoto = ({ category }: HorizontalPhotoProps) => {

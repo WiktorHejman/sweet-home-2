@@ -4,7 +4,8 @@ export type Photos = {
   hero: string;
   verticals: string[];
   // horizontals: string[];
-  horizontal: string;
+  horizontalFirst: string;
+  horizontalSecond: string;
 };
 
 export type HousePhotoConfig = {

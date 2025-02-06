@@ -5,13 +5,15 @@ export const housePhotos: HousePhotoConfig = {
     hero: "02_dzieciol.jpg",
     verticals: ["11_dzieciol.jpg", "16_dzieciol.jpg"],
     // horizontals: ["kitchen.jpg", "house-rules.jpg"],
-    horizontal: "04_dzieciol.jpg",
+    horizontalFirst: "04_dzieciol.jpg",
+    horizontalSecond: "05_dzieciol.jpg",
   },
   sojka: {
     hero: "19_sojka.jpg",
     verticals: ["01_sojka.jpg", "11_sojka.jpg"],
     // horizontals: ["kitchen.jpg", "house-rules.jpg"],
-    horizontal: "18_sojka.jpg",
+    horizontalFirst: "18_sojka.jpg",
+    horizontalSecond: "03_sojka.jpg",
   },
 };
 
