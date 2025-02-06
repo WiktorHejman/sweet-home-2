@@ -1,4 +1,4 @@
-import { Amenities, HorizontalPhoto, HouseFeatures, HouseRules, HouseSelector, HouseSelectorProvider, SleepingArrangements, TwoVerticalPhotos } from '@/components/Houses';
+import { Amenities, HorizontalPhoto, HouseFeatures, HouseRules, HouseSelector, HouseSelectorProvider, SleepingArrangements, TwoVerticalPhotos } from '@/components/houses';
 import { housesDetails } from '@/config';
 
 // export const metadata: Metadata = {
