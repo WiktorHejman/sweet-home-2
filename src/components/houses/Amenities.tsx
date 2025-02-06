@@ -10,7 +10,7 @@ const AmenityGroup = ({ title, icon, items }: AmenityGroupProps) => (
   <div className="group relative overflow-hidden rounded-xl p-8 lg:p-10
                   border border-earth-700/50 bg-earth-900/40
                   transition-[background-color] duration-150 ease-in-out hover:bg-earth-900/60">
-    <div className="absolute right-6 top-6 w-25 h-25
+    <div className="absolute right-6 top-6 w-24 h-24 md:w-56 md:h-56
                     text-forest-400/40 transition-transform duration-500 ease-in-out
                     group-hover:text-forest-400/60 group-hover:scale-110">
       {icon}
