@@ -19,7 +19,6 @@ export const HouseSelector = ({ houses }: HouseSelectorProps) => {
   return (
     <>
       <div className="flex gap-4">
-        {/* House selector buttons */}
         {Object.entries(houses).map(([key, house]) => (
           <button
             key={key}
@@ -42,10 +41,9 @@ export const HouseSelector = ({ houses }: HouseSelectorProps) => {
         transition={{ duration: 0.3 }}
         className="space-y-16"
       >
-        {/* Content sections */}
         <div className="space-y-6">
           <h1 className="text-4xl sm:text-5xl font-bold text-earth-50">{house.title}</h1>
-          <p className="text-xl text-earth-300/80 max-w-3xl">{house.longDescription}</p>
+          <p className="text-xl text-earth-300/80">{house.longDescription}</p>
         </div>
       </motion.div>
     </>

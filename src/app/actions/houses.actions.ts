@@ -1,3 +1,5 @@
+"use server";
+
 import { housePhotos } from "@/config/houses";
 import { STORAGE } from "@/config/storage";
 import { House } from "@/types/houses";
