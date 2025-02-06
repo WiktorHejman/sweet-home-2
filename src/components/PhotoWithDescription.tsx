@@ -22,8 +22,8 @@ const PhotoWithDescription = ({ src, alt, description, orientation }: PhotoWithD
         </div>
 
         <div className="w-full aspect-[4/5] flex items-center">
-          <p className="text-xl text-earth-100 md:text-2xl font-light leading-relaxed tracking-wide
-                        border-2 border-forest-500/30 rounded-3xl p-6
+          <p className="text-base sm:text-lg md:text-xl text-earth-100 font-light leading-relaxed tracking-wide
+                        border-2 border-forest-500/30 rounded-3xl p-4 sm:p-6
                         bg-forest-900/20 backdrop-blur-sm
                         shadow-lg shadow-forest-900/10">
             {description}
