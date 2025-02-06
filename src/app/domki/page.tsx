@@ -1,4 +1,5 @@
-import { Amenities, HouseFeatures, HouseRules, HouseSelector, SleepingArrangements } from '@/components/houses';
+import { Amenities, HorizontalPhoto, HouseFeatures, HouseRules, HouseSelector, HouseSelectorProvider, SleepingArrangements, TwoVerticalPhotos } from '@/components/houses';
+import { housesDetails } from '@/config';
 
 // export const metadata: Metadata = {
 //   title: 'Lasownia - Komfortowe domy w sercu Puszczy Białej',
@@ -21,37 +22,19 @@ import { Amenities, HouseFeatures, HouseRules, HouseSelector, SleepingArrangemen
 //   },
 // };
 
-const houses = {
-  dzieciol: {
-    title: "Dzięcioł",
-    description: "Dom Dzięcioł wyróżnia się czerwonymi akcentami kolorystycznymi nawiązując do charakterystycznego czerwonego upierzenia.",
-    longDescription: "Dom znajduje się na samym skraju Puszczy Białej, zatem na spacery można wybrać się bez wsiadania do samochodu. Wystarczy założyć buty i po kilku krokach znajdziecie się w lesie. Dzięcioł oferuje doskonały widok na malownicze otoczenie, a jednocześnie zapewnia wszystkie niezbędne udogodnienia dla komfortowego pobytu.",
-    images: [
-      "/01_dzieciol.jpg",
-      "/02_dzieciol.jpg",
-      "/03_dzieciol.jpg",
-    ]
-  },
-  sojka: {
-    title: "Sójka",
-    description: "Kolory Domu Sójka zostały zainspirowane charakterystycznie niebieskimi i brązowymi piórami naszych sąsiadów.",
-    longDescription: "Dom znajduje się na samym skraju Puszczy Białej, zatem na spacery można wybrać się bez wsiadania do samochodu. Wystarczy założyć buty i po kilku krokach znajdziecie się w lesie. Sójka oferuje doskonały widok na malownicze otoczenie, a jednocześnie zapewnia wszystkie niezbędne udogodnienia dla komfortowego pobytu.",
-    images: [
-      "/01_sojka.jpg",
-      "/02_sojka.jpg",
-      "/03_sojka.jpg",
-    ]
-  }
-};
-
 export default function Houses() {
   return (
-    <section className="max-w-7xl mx-auto p-6 space-y-16">
-      <HouseSelector houses={houses} />
-      <HouseFeatures />
-      <SleepingArrangements />
-      <Amenities />
-      <HouseRules />
-    </section>
+    <HouseSelectorProvider>
+      <section className="max-w-7xl mx-auto p-6 space-y-16">
+        <HorizontalPhoto category="hero" />
+        <HouseSelector houses={housesDetails} />
+        <HouseFeatures />
+        <TwoVerticalPhotos category="verticals" />
+        <SleepingArrangements />
+        <HorizontalPhoto category="horizontal" />
+        <Amenities />
+        <HouseRules />
+      </section>
+    </HouseSelectorProvider>
   );
 }

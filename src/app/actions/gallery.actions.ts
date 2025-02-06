@@ -1,11 +1,8 @@
 "use server";
 
+import { STORAGE } from "@/config/storage";
 import { GalleryImage } from "@/types/gallery";
 import { supabase } from "@/utils/supabase/supabase";
-
-const BUCKET_NAME = "gallery-images";
-const FOLDERS = ["dzieciol", "sojka"] as const;
-const BATCH_SIZE = 12;
 
 export async function getGalleryImages(page: number): Promise<{
   images: GalleryImage[];
@@ -13,14 +10,14 @@ export async function getGalleryImages(page: number): Promise<{
 }> {
   try {
     const images: GalleryImage[] = [];
-    const start = (page - 1) * BATCH_SIZE;
+    const start = (page - 1) * STORAGE.BATCH_SIZE;
     let totalCount = 0;
 
-    for (const folder of FOLDERS) {
+    for (const folder of STORAGE.FOLDERS) {
       const { data: folderImages, error } = await supabase.storage
-        .from(BUCKET_NAME)
+        .from(STORAGE.BUCKETS.GALLERY)
         .list(folder, {
-          limit: BATCH_SIZE,
+          limit: STORAGE.BATCH_SIZE,
           offset: start,
           sortBy: { column: "name", order: "asc" },
         });
@@ -32,7 +29,7 @@ export async function getGalleryImages(page: number): Promise<{
         .map((file) => ({
           id: `${folder}-${file.id}`,
           url: supabase.storage
-            .from(BUCKET_NAME)
+            .from(STORAGE.BUCKETS.GALLERY)
             .getPublicUrl(`${folder}/${file.name}`).data.publicUrl,
           folder,
         }));
@@ -43,7 +40,7 @@ export async function getGalleryImages(page: number): Promise<{
 
     return {
       images,
-      hasMore: totalCount === BATCH_SIZE,
+      hasMore: totalCount === STORAGE.BATCH_SIZE,
     };
   } catch (error) {
     console.error("Error fetching gallery images:", error);
