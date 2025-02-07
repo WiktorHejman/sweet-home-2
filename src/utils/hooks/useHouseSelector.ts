@@ -4,8 +4,9 @@ import { createContext, useContext } from "react";
 
 interface HouseSelectorContextType {
   selectedHouse: House;
-  setSelectedHouse: (house: House) => void;
   photos: Photos | null;
+  isLoading: boolean;
+  setSelectedHouse: (house: House) => void;
 }
 
 export const HouseSelectorContext =

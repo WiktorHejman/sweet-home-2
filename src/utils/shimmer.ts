@@ -2,12 +2,12 @@ export const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">
-      <stop stop-color="#0B1419" offset="20%" />
-      <stop stop-color="#1A2C34" offset="50%" />
-      <stop stop-color="#0B1419" offset="70%" />
+      <stop stop-color="#0A120F" offset="20%" />
+      <stop stop-color="#1C2922" offset="50%" />
+      <stop stop-color="#0A120F" offset="70%" />
     </linearGradient>
   </defs>
-  <rect width="${w}" height="${h}" fill="#0B1419" />
+  <rect width="${w}" height="${h}" fill="#0A120F" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1.5s" repeatCount="indefinite"  />
 </svg>`;
