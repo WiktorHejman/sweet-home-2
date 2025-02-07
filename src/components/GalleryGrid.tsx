@@ -2,6 +2,7 @@
 
 import { getGalleryImages } from '@/app/actions/gallery.actions';
 import { GalleryImage } from '@/types/gallery';
+import { shimmer, toBase64 } from '@/utils/shimmer';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Modal from './Modal';
@@ -70,6 +71,8 @@ export default function GalleryGrid({ initialImages }: { initialImages: GalleryI
                        (max-width: 1024px) 33vw,
                        25vw"
                 loading="lazy"
+                placeholder="blur"
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(800, 1200))}`}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-forest-950/0 to-forest-950/30
                             group-hover:opacity-0 transition-opacity duration-300" />

@@ -1,6 +1,7 @@
 'use client';
 
 import { useHouseSelector } from "@/utils/hooks";
+import { shimmer, toBase64 } from "@/utils/shimmer";
 import Image from "next/image";
 
 interface TwoVerticalPhotosProps {
@@ -23,6 +24,8 @@ export default function TwoVerticalPhotos({ category }: TwoVerticalPhotosProps) 
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover rounded-3xl"
+              placeholder="blur"
+              blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(800, 1200))}`}
             />
           </div>
         ))}
