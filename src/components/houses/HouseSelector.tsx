@@ -29,7 +29,7 @@ export default function HouseSelector({ houses }: HouseSelectorProps) {
             onClick={() => setSelectedHouse(key as House)}
           >
             <h2 className="text-xl sm:text-2xl font-bold text-earth-50 mb-2">{house.title}</h2>
-            <p className="text-sm sm:text-base text-earth-300">{house.description}</p>
+            <p className="text-base sm:text-lg text-earth-300">{house.description}</p>
           </button>
         ))}
       </div>
