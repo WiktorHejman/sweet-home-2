@@ -112,7 +112,10 @@ export default function Header() {
               </Link>
             ))}
 
-            <button className="
+            <Link
+              href="http://booking.hotres.pl/v4_step1?oid=3790&lang=pl&"
+              target="_blank"
+              className="
               relative overflow-hidden px-6 py-2 rounded-lg
               bg-forest-500/10 text-forest-300
               border border-forest-500/20
@@ -131,7 +134,7 @@ export default function Header() {
                 group-hover:translate-y-0
                 transition-transform duration-300
               "></span>
-            </button>
+            </Link>
           </nav>
 
           <button
@@ -182,18 +185,12 @@ export default function Header() {
                   ))}
                 </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.3, delay: 0.2 }}
-                  className="w-full px-4"
-                >
-                  <Link
-                    href="http://booking.hotres.pl/v4_step1?oid=3790&lang=pl&"
-                    target="_blank"
-                    className="
-                    w-full py-5 rounded-2xl
+
+                <Link
+                  href="http://booking.hotres.pl/v4_step1?oid=3790&lang=pl&"
+                  target="_blank"
+                  className="
+                    w-full py-5 rounded-2xl text-center
                     bg-forest-500/10 text-forest-300
                     border-2 border-forest-500/20
                     hover:bg-forest-500/20 hover:border-forest-500/30
@@ -202,9 +199,8 @@ export default function Header() {
                     text-2xl font-semibold
                     shadow-lg shadow-forest-900/20
                   ">
-                    Rezerwacja
-                  </Link>
-                </motion.div>
+                  Rezerwacja
+                </Link>
               </div>
             </motion.nav>
           )}
