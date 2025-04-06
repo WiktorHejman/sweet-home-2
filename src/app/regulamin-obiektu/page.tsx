@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function TermsObject() {
   return (
     <section className="max-w-3xl mx-auto p-6">
@@ -146,31 +148,31 @@ export default function TermsObject() {
         <h2 className="text-2xl font-bold mb-4">Załączniki:</h2>
         <ul className="list-none space-y-3">
           <li>
-            <a
+            <Link
               href="/docs/regulamin-obiektu-lasownia.pdf"
               download
-              className="inline-block bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded transition-colors"
+              className="inline-block bg-forest-700 hover:bg-forest-800 text-earth-100 py-2 px-4 rounded transition-colors"
             >
               Pobierz Regulamin Obiektu Lasownia
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/docs/regulamin-sauny.pdf"
               download
-              className="inline-block bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded transition-colors"
+              className="inline-block bg-forest-700 hover:bg-forest-800 text-earth-100 py-2 px-4 rounded transition-colors"
             >
               Pobierz Załącznik 1 - Regulamin Sauny
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/docs/regulamin-balii.pdf"
               download
-              className="inline-block bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded transition-colors"
+              className="inline-block bg-forest-700 hover:bg-forest-800 text-earth-100 py-2 px-4 rounded transition-colors"
             >
               Pobierz Załącznik 2 - Regulamin Balii
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
