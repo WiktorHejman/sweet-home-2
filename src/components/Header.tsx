@@ -14,6 +14,7 @@ export default function Header() {
   const router = useRouter();
   const SCROLL_OFFSET = 80;
   const hoverZoneRef = useRef<HTMLDivElement>(null);
+  const prevPathRef = useRef(pathname);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#') || href.startsWith('/#')) {
@@ -34,8 +35,17 @@ export default function Header() {
           });
         }
       }
+    } else {
+      setIsMenuOpen(false);
     }
   };
+
+  useEffect(() => {
+    if (prevPathRef.current !== pathname) {
+      setIsMenuOpen(false);
+      prevPathRef.current = pathname;
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (pathname === '/' && window.location.hash) {
@@ -70,7 +80,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Invisible hover zone at the top of the screen */}
       <div
         ref={hoverZoneRef}
         onMouseEnter={() => setIsHovering(true)}
