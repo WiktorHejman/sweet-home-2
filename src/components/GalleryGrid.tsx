@@ -15,10 +15,29 @@ export default function GalleryGrid({ initialImages }: { initialImages: GalleryI
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const loadMoreRef = useRef<HTMLDivElement>(null);
+  const [columnCount, setColumnCount] = useState(4);
 
   useEffect(() => {
     setIsModalImageLoading(true);
   }, [modalImage]);
+
+  useEffect(() => {
+    const updateColumnCount = () => {
+      if (window.innerWidth < 640) {
+        setColumnCount(1);
+      } else if (window.innerWidth < 768) {
+        setColumnCount(2);
+      } else if (window.innerWidth < 1024) {
+        setColumnCount(3);
+      } else {
+        setColumnCount(4);
+      }
+    };
+
+    updateColumnCount();
+    window.addEventListener('resize', updateColumnCount);
+    return () => window.removeEventListener('resize', updateColumnCount);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,7 +48,11 @@ export default function GalleryGrid({ initialImages }: { initialImages: GalleryI
 
           try {
             const result = await getGalleryImages(nextPage);
-            setImages(prev => [...prev, ...result.images]);
+
+            setTimeout(() => {
+              setImages(prev => [...prev, ...result.images]);
+            }, 100);
+
             setHasMore(result.hasMore);
             setPage(nextPage);
           } catch (error) {
@@ -49,36 +72,53 @@ export default function GalleryGrid({ initialImages }: { initialImages: GalleryI
     return () => observer.disconnect();
   }, [page, hasMore, loading]);
 
+  const getColumnImages = () => {
+    const columns: GalleryImage[][] = Array.from({ length: columnCount }, () => []);
+
+    images.forEach((image, index) => {
+      const columnIndex = index % columnCount;
+      columns[columnIndex].push(image);
+    });
+
+    return columns;
+  };
+
+  const columns = getColumnImages();
+
   return (
     <>
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-        {images.map((image) => (
-          <div
-            key={image.id}
-            className="break-inside-avoid cursor-pointer group relative overflow-hidden rounded-2xl"
-            onClick={() => setModalImage(image)}
-          >
-            <div className="relative aspect-auto">
-              <Image
-                src={image.url}
-                alt={`${image.folder} gallery image`}
-                width={800}
-                height={800}
-                className="w-full h-auto rounded-2xl transition-all duration-500
-                         group-hover:scale-105 object-cover"
-                sizes="(max-width: 640px) 100vw,
-                       (max-width: 768px) 50vw,
-                       (max-width: 1024px) 33vw,
-                       25vw"
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(800, 1200))}`}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-forest-950/0 to-forest-950/30
-                            group-hover:opacity-0 transition-opacity duration-300" />
-              <div className="absolute inset-0 bg-forest-950/30 opacity-0
-                            group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {columns.map((column, columnIndex) => (
+          <div key={`column-${columnIndex}`} className="flex flex-col gap-4">
+            {column.map((image) => (
+              <div
+                key={image.id}
+                className="cursor-pointer group relative overflow-hidden rounded-2xl animate-fadeIn"
+                onClick={() => setModalImage(image)}
+              >
+                <div className="relative aspect-auto">
+                  <Image
+                    src={image.url}
+                    alt={`${image.folder} gallery image`}
+                    width={800}
+                    height={800}
+                    className="w-full h-auto rounded-2xl transition-all duration-500
+                             group-hover:scale-105 object-cover"
+                    sizes="(max-width: 640px) 100vw,
+                           (max-width: 768px) 50vw,
+                           (max-width: 1024px) 33vw,
+                           25vw"
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(800, 1200))}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-forest-950/0 to-forest-950/30
+                                group-hover:opacity-0 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-forest-950/30 opacity-0
+                                group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            ))}
           </div>
         ))}
       </div>
