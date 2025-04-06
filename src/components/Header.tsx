@@ -175,7 +175,10 @@ export default function Header() {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="w-full px-4"
               >
-                <button className="
+                <Link
+                  href="http://booking.hotres.pl/v4_step1?oid=3790&lang=pl&"
+                  target="_blank"
+                  className="
                   w-full py-5 rounded-2xl
                   bg-forest-500/10 text-forest-300
                   border-2 border-forest-500/20
@@ -186,7 +189,7 @@ export default function Header() {
                   shadow-lg shadow-forest-900/20
                 ">
                   Rezerwacja
-                </button>
+                </Link>
               </motion.div>
             </div>
           </motion.nav>

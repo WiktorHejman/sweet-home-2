@@ -58,13 +58,15 @@ export default function Footer() {
               >
                 Polityka prywatności
               </Link>
-              <button
+              <Link
+                href="https://panel.hotres.pl/def/newsletter/sign/auth/cfe93315988584e90b92979885641d4c/id/3790/lang/pl"
+                target="_blank"
                 className="px-3 py-1 text-neutral-300 hover:text-earth-100
                          transition-all duration-100 rounded-lg
                          hover:bg-forest-900/30 hover:backdrop-blur-sm"
               >
                 Newsletter
-              </button>
+              </Link>
             </div>
           </div>
         </div>
