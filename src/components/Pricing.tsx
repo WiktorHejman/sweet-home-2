@@ -1,6 +1,6 @@
 const additionalFees = [
   { label: 'Osoba dorosła', price: '150 zł', unit: '/doba' },
-  { label: 'Sprzątanie', price: '150 zł', unit: 'jednorazowo' },
+  { label: 'Sprzątanie', price: '180 zł', unit: 'jednorazowo' },
   { label: 'Dzieci 2-12 lat', price: '75 zł', unit: '/doba' },
   { label: 'Kaucja zwrotna', price: '500 zł', unit: 'za pobyt' },
   { label: 'Dzieci do lat 2', price: 'bezpłatnie', unit: '' },
@@ -26,14 +26,14 @@ export default function PricingSection() {
             <div className="bg-neutral-900/50 rounded-lg p-3 sm:p-4 transition-colors duration-200 hover:bg-neutral-800/50">
               <div className="grid grid-cols-[1fr_auto_auto] items-center gap-2 sm:gap-4">
                 <span className="text-sm sm:text-base text-neutral-300">PN-CZ</span>
-                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">525 zł</strong>
+                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">575 zł</strong>
                 <small className="text-xs sm:text-sm text-neutral-400 whitespace-nowrap">/doba za 2 osoby</small>
               </div>
             </div>
             <div className="bg-neutral-900/50 rounded-lg p-3 sm:p-4 transition-colors duration-200 hover:bg-neutral-800/50">
               <div className="grid grid-cols-[1fr_auto_auto] items-center gap-2 sm:gap-4">
                 <span className="text-sm sm:text-base text-neutral-300">PT-ND</span>
-                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">675 zł</strong>
+                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">725 zł</strong>
                 <small className="text-xs sm:text-sm text-neutral-400 whitespace-nowrap">/doba za 2 osoby</small>
               </div>
             </div>
@@ -52,16 +52,40 @@ export default function PricingSection() {
             <div className="bg-neutral-900/50 rounded-lg p-3 sm:p-4 transition-colors duration-200 hover:bg-neutral-800/50">
               <div className="grid grid-cols-[1fr_auto_auto] items-center gap-2 sm:gap-4">
                 <span className="text-sm sm:text-base text-neutral-300">PN-CZ</span>
-                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">575 zł</strong>
+                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">625 zł</strong>
                 <small className="text-xs sm:text-sm text-neutral-400 whitespace-nowrap">/doba za 2 osoby</small>
               </div>
             </div>
             <div className="bg-neutral-900/50 rounded-lg p-3 sm:p-4 transition-colors duration-200 hover:bg-neutral-800/50">
               <div className="grid grid-cols-[1fr_auto_auto] items-center gap-2 sm:gap-4">
                 <span className="text-sm sm:text-base text-neutral-300">PT-ND</span>
-                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">725 zł</strong>
+                <strong className="text-lg sm:text-xl text-neutral-200 text-right font-medium">775 zł</strong>
                 <small className="text-xs sm:text-sm text-neutral-400 whitespace-nowrap">/doba za 2 osoby</small>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-8">
+        <h3 className="text-2xl font-semibold text-neutral-200 mb-6 flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-earth-500"></span>
+          W cenie pobytu
+        </h3>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="group bg-neutral-900/50 backdrop-blur-sm rounded-lg p-4 border border-transparent transition-all duration-200 hover:bg-neutral-800/50 hover:border-neutral-700/50">
+            <div className="flex items-center justify-between">
+              <span className="text-sm sm:text-base text-neutral-300 font-medium group-hover:text-neutral-200 transition-colors duration-200">Sauna IR</span>
+              <small className="text-xs sm:text-sm text-neutral-400">(2-3 osoby)</small>
+            </div>
+          </div>
+          <div className="group bg-neutral-900/50 backdrop-blur-sm rounded-lg p-4 border border-transparent transition-all duration-200 hover:bg-neutral-800/50 hover:border-neutral-700/50">
+            <div className="flex items-center justify-between">
+              <div className="flex items-baseline gap-1">
+                <span className="text-sm sm:text-base text-neutral-300 font-medium group-hover:text-neutral-200 transition-colors duration-200">Balia ogrzewana drewnem</span>
+                <span className="text-xs sm:text-sm text-neutral-400">Ok. 4h nagrzewania. Wymaga samodzielnego napełnienia i rozpalenia</span>
+              </div>
+              <small className="text-xs sm:text-sm text-neutral-400 whitespace-nowrap shrink-0">(6-8 osób)</small>
             </div>
           </div>
         </div>
@@ -83,27 +107,6 @@ export default function PricingSection() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      <div className="mb-8">
-        <h3 className="text-2xl font-semibold text-neutral-200 mb-6 flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-earth-500"></span>
-          W cenie pobytu
-        </h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="group bg-neutral-900/50 backdrop-blur-sm rounded-lg p-4 border border-transparent transition-all duration-200 hover:bg-neutral-800/50 hover:border-neutral-700/50">
-            <div className="flex items-center justify-between">
-              <span className="text-sm sm:text-base text-neutral-300 font-medium group-hover:text-neutral-200 transition-colors duration-200">Sauna IR</span>
-              <small className="text-xs sm:text-sm text-neutral-400">(2-3 osoby)</small>
-            </div>
-          </div>
-          <div className="group bg-neutral-900/50 backdrop-blur-sm rounded-lg p-4 border border-transparent transition-all duration-200 hover:bg-neutral-800/50 hover:border-neutral-700/50">
-            <div className="flex items-center justify-between">
-              <span className="text-sm sm:text-base text-neutral-300 font-medium group-hover:text-neutral-200 transition-colors duration-200">Balia</span>
-              <small className="text-xs sm:text-sm text-neutral-400">(6-8 osób)</small>
-            </div>
-          </div>
         </div>
       </div>
 

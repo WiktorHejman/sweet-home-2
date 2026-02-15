@@ -23,17 +23,24 @@ const amenities = [
   },
   {
     icon: <TimeIcon className="w-12 h-12 text-current" />,
-    title: "Elastyczny czas pobytu",
+    title: "Niski sezon",
     description: (
       <>
-        Minimalny czas najmu:<br />
+        Minimalny czas pobytu:<br />
         1 doba w tygodniu<br />
-        2 doby w weekend
+        2 doby w weekend<br />
       </>
     )
   },
   {
-    isDecorative: true
+    icon: <TimeIcon className="w-12 h-12 text-current" />,
+    title: "Wysoki sezon",
+    description: (
+      <>
+        Minimalny czas pobytu:<br />
+        2 doby
+      </>
+    )
   },
   {
     icon: <DogIcon className="w-12 h-12 text-current" />,
