@@ -46,6 +46,9 @@ const amenities = [
     icon: <DogIcon className="w-12 h-12 text-current" />,
     title: "Przyjazne zwierzętom",
     description: "Darmowy pobyt dla czworonogów"
+  },
+  {
+    isDecorative: true
   }
 ];
 
