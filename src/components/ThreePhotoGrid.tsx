@@ -1,18 +1,14 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+
+interface PhotoEntry {
+  src: StaticImageData | string;
+  alt: string;
+}
 
 interface ThreePhotoGridProps {
-  mainPhoto: {
-    src: string;
-    alt: string;
-  };
-  bottomLeftPhoto: {
-    src: string;
-    alt: string;
-  };
-  bottomRightPhoto: {
-    src: string;
-    alt: string;
-  };
+  mainPhoto: PhotoEntry;
+  bottomLeftPhoto: PhotoEntry;
+  bottomRightPhoto: PhotoEntry;
 }
 
 export default function ThreePhotoGrid({ mainPhoto, bottomLeftPhoto, bottomRightPhoto }: ThreePhotoGridProps) {
@@ -25,6 +21,7 @@ export default function ThreePhotoGrid({ mainPhoto, bottomLeftPhoto, bottomRight
           fill
           sizes="(max-width: 1280px) 100vw, 1280px"
           className="object-cover rounded-3xl"
+          {...(typeof mainPhoto.src === 'object' && { placeholder: 'blur' })}
         />
       </div>
 
@@ -36,6 +33,7 @@ export default function ThreePhotoGrid({ mainPhoto, bottomLeftPhoto, bottomRight
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover rounded-3xl"
+            {...(typeof bottomLeftPhoto.src === 'object' && { placeholder: 'blur' })}
           />
         </div>
 
@@ -46,6 +44,7 @@ export default function ThreePhotoGrid({ mainPhoto, bottomLeftPhoto, bottomRight
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover rounded-3xl"
+            {...(typeof bottomRightPhoto.src === 'object' && { placeholder: 'blur' })}
           />
         </div>
       </div>

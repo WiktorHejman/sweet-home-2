@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface PhotoWithDescriptionProps {
-  src: string;
+  src: StaticImageData | string;
   alt: string;
   description: string;
   orientation: 'left' | 'right';
@@ -18,6 +18,7 @@ export default function PhotoWithDescription({ src, alt, description, orientatio
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover rounded-3xl"
+            {...(typeof src === 'object' && { placeholder: 'blur' })}
           />
         </div>
 

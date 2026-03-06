@@ -5,6 +5,12 @@ import PhotoWithDescription from "@/components/PhotoWithDescription";
 import Pricing from "@/components/Pricing";
 import Separator from "@/components/Separator";
 import ThreePhotoGrid from "@/components/ThreePhotoGrid";
+import dzieciol06 from "../../public/06_dzieciol.jpg";
+import dzieciol01 from "../../public/01_dzieciol.jpg";
+import sojka10 from "../../public/10_sojka.jpg";
+import dzieciolSalon from "../../public/01_dzieciol_salon.jpg";
+import sojka17 from "../../public/17_sojka.jpg";
+
 export default function Home() {
   return (
     <>
@@ -22,15 +28,15 @@ export default function Home() {
 
         <ThreePhotoGrid
           mainPhoto={{
-            src: "/06_dzieciol.jpg",
+            src: dzieciol06,
             alt: "Main landscape photo"
           }}
           bottomLeftPhoto={{
-            src: "/01_dzieciol.jpg",
+            src: dzieciol01,
             alt: "Bottom left photo"
           }}
           bottomRightPhoto={{
-            src: "/10_sojka.jpg",
+            src: sojka10,
             alt: "Bottom right photo"
           }}
         />
@@ -51,14 +57,14 @@ export default function Home() {
 
         <div className="mb-20 space-y-4">
           <PhotoWithDescription
-            src="/01_dzieciol_salon.jpg"
+            src={dzieciolSalon}
             alt="Dzięcioł"
             description="Dzięcioł wyróżnia się czerwonymi akcentami, inspirowanymi barwami charakterystycznego upierzenia jego ptasiego imiennika. To dom dla tych, którzy cenią ciepłe, wyraziste detale i bliskość natury. Położony na skraju Puszczy Białej, pozwala rozpocząć leśne spacery tuż po wyjściu za drzwi. Przestronne wnętrze, naturalne materiały i duże przeszklenia sprawiają, że goście mogą cieszyć się pięknem otaczającej przyrody o każdej porze roku. Dzięcioł oferuje wszystkie niezbędne udogodnienia, zapewniając wygodny wypoczynek zarówno dla par, rodzin, jak i grupy przyjaciół. To idealne miejsce, by zatrzymać się na chwilę, oderwać od codzienności i zanurzyć w kojącej atmosferze lasu."
             orientation="left"
           />
 
           <PhotoWithDescription
-            src="/17_sojka.jpg"
+            src={sojka17}
             alt="Sójka"
             description="Sójka to dom pełen harmonii, inspirowany niebiesko-brązowym upierzeniem swojego skrzydlatego sąsiada. Jego stonowana kolorystyka i przytulne wnętrze tworzą atmosferę idealną do relaksu. Położony tuż przy granicy Puszczy Białej, pozwala cieszyć się leśnymi ścieżkami bez konieczności dojazdu – wystarczy wyjść na zewnątrz i zrobić kilka kroków. Duże okna wpuszczają mnóstwo naturalnego światła, podkreślając bliskość otaczającej przyrody i sprzyjając wyciszeniu. Sójka, podobnie jak Dzięcioł, zapewnia pełen komfort, łącząc nowoczesne udogodnienia z naturalnym urokiem okolicy. To doskonały wybór dla każdego, kto szuka równowagi, spokoju i regeneracji w sercu natury."
             orientation="right"
